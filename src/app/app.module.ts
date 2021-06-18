@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { MonedaFotoComponent } from './moneda-foto/moneda-foto.component';
 import { MonedaDetalleComponent } from './moneda-detalle/moneda-detalle.component';
+import { CarritoService } from './carrito.service';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { MonedaDetalleComponent } from './moneda-detalle/moneda-detalle.componen
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  providers: [CarritoService]
 })
 export class AppModule { }
 

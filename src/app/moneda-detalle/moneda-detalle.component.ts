@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Moneda, monedas } from '../monedas';
+import { CarritoService } from '../carrito.service';
 
 @Component({
   selector: 'app-moneda-detalle',
@@ -11,7 +12,9 @@ export class MonedaDetalleComponent implements OnInit {
 
   moneda: Moneda|undefined;
 
-  constructor(private route: ActivatedRoute,) { }
+  constructor( private route: ActivatedRoute , 
+               private carrito: CarritoService) {
+  }
 
   ngOnInit() {
     // First get the product id from the current route.
@@ -20,6 +23,11 @@ export class MonedaDetalleComponent implements OnInit {
 
     // Find the product that correspond with the id provided in route.
     this.moneda = monedas.find(moneda => moneda.id === productIdFromRoute);
+  }
+
+  addToCart(moneda: Moneda) {
+    this.carrito.addToCart(moneda);
+    window.alert('Your product has been added to the cart!');
   }
 
 }
