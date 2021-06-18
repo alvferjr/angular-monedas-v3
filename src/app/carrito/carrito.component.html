@@ -5,6 +5,10 @@
 </p>
 
 <div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.pais }}</span>
-  <span>{{ item.valor }}</span>
+  <span><b><u>ARTÍCULO NUM:</u></b> {{ items.indexOf(item)+1 }} </span><br>
+  <span><b>PAÍS:</b> {{ item.pais }} </span><br>
+  <span><b>VALOR:</b> {{ item.valor }} </span><br>
+  <span><b>DESCRIPCIÓN:</b> {{ item.descripcion }} </span><br>
+  <span><b>PRECIO:</b> {{ item.precio }} </span><br>
+  <br>
 </div>
