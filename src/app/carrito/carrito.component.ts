@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../carrito.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-carrito',
@@ -9,9 +10,21 @@ import { CarritoService } from '../carrito.service';
 export class CarritoComponent implements OnInit {
 
   items = this.carritoService.getItems();
-  constructor(private carritoService: CarritoService) { }
+  checkoutForm = this.formBuilder.group({
+    nombre: '',
+    direccion: ''
+  });
+
+  constructor(private carritoService: CarritoService,private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(): void {
+    // Process checkout data here
+    this.items = this.carritoService.clearCart();
+    console.warn('Se ha procesado tu pedido', this.checkoutForm.value);
+    this.checkoutForm.reset();
   }
 
 }
