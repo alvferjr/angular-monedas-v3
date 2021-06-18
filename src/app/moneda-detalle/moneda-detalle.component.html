@@ -1,13 +1,14 @@
 <h2>Detalle de la moneda seleccionada</h2>
 
 <div *ngIf="moneda">
-  <h3>{{ moneda.pais }}</h3>
-  <h4>{{ moneda.valor }}</h4>
-  <p>{{ moneda.anio }}</p>
-  <p>{{ moneda.ceca }}</p>
-  <p>{{ moneda.descripcion }}</p>
-  <p>{{ moneda.comentario }}</p>
-  <p>{{ moneda.fotografia }}</p>
-  <p>{{ moneda.rutaFotografia }}</p>
-
+  <p><b>PAIS:</b> {{ moneda.pais }}</p>
+  <p><b>VALOR:</b> {{ moneda.valor }}</p>
+  <p><b>AÑO:</b> {{ moneda.anio }}</p>
+  <p><b>CECA:</b> {{ moneda.ceca }}</p>
+  <p><b>VALOR MERCADO:</b> {{ moneda.precio }}</p>
+  <p><b>DESCRIPCIÓN:</b> {{ moneda.descripcion }}</p>
+  <p><b>COMENTARIO:</b> {{ moneda.comentario }}</p>
+  <p><b>FOTO:</b> {{ moneda.fotografia }}</p>
+  <p><b>RUTA FOTO:</b> {{ moneda.rutaFotografia }}</p>
+  <button (click)="addToCart(moneda)">Buy</button>
 </div>

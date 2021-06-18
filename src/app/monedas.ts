@@ -2,6 +2,7 @@ export interface Moneda {
   id: number;
   pais: string;
   valor: string;
+  precio: string;
   anio: number;
   ceca: string;
   descripcion: string;
@@ -16,6 +17,7 @@ export const monedas = [
     id: 1,
     pais: 'España',
     valor: '20€',
+    precio: '150€',
     anio: 2020,
     ceca: 'Madrid',
     descripcion: 'Moneda de plata. No circulada. Perfecto estado',
@@ -27,6 +29,7 @@ export const monedas = [
     id: 2,
     pais: 'España',
     valor: '5 ptas',
+    precio: '50€',
     anio: 1890,
     ceca: 'Madrid',
     descripcion: 'Alfonso XII. Circulada. Desgastada por el uso',
@@ -38,6 +41,7 @@ export const monedas = [
     id: 3,
     pais: 'El Vaticano',
     valor: '100 ptas',
+    precio: '100€',
     anio: 1982,
     ceca: 'Madrid',
     descripcion: 'Moneda de plata. No circulada. Perfecto estado',

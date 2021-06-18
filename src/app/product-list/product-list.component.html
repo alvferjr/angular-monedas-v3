@@ -6,6 +6,7 @@
         <th>PAIS</th>
         <th>AÑO</th>
         <th>VALOR</th>
+        <th>VALOR MERCADO</th>
         <th>DESC</th>
         <th>COMENT</th>
         <th>FOTO</th>
@@ -17,6 +18,7 @@
         <td ><a [title]="'listar monedas de '+moneda.pais">{{ moneda.pais }}</a></td>
         <td ><a [title]="'listar monedas del año '+moneda.anio">{{ moneda.anio }}</a></td>
         <td ><a [title]="'listar monedas de '+moneda.valor">{{ moneda.valor }}</a></td>
+        <td >{{ moneda.precio }}</td>
         <td >{{ moneda.descripcion }}</td>
         <td >{{ moneda.comentario }}</td>
         <td><app-moneda-foto [moneda]="moneda" (muestraFoto)="onMuestraFoto()"></app-moneda-foto></td>
