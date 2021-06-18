@@ -1,0 +1,32 @@
+<h2>Monedas</h2>
+<table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>PAIS</th>
+        <th>AÑO</th>
+        <th>VALOR</th>
+        <th>DESC</th>
+        <th>COMENT</th>
+        <th>FOTO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let moneda of monedas">
+        <td><a [title]="'Detalle de esta moneda'" [routerLink]="['/monedas', moneda.id]">{{moneda.id}}</a></td>
+        <td ><a [title]="'listar monedas de '+moneda.pais">{{ moneda.pais }}</a></td>
+        <td ><a [title]="'listar monedas del año '+moneda.anio">{{ moneda.anio }}</a></td>
+        <td ><a [title]="'listar monedas de '+moneda.valor">{{ moneda.valor }}</a></td>
+        <td >{{ moneda.descripcion }}</td>
+        <td >{{ moneda.comentario }}</td>
+        <td><app-moneda-foto [moneda]="moneda" (muestraFoto)="onMuestraFoto()"></app-moneda-foto></td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
